@@ -28,3 +28,18 @@ Asegúrate de tener instalado el entorno correspondiente y ejecuta el programa d
 
 ```bash
 python calculadora_diluciones.py
+
+## validaciones
+La herramienta ejecuta controles automáticos de calidad para evitar errores de laboratorio y excepciones en el código:Valores no numéricos: Captura y rechaza caracteres alfabéticos o símbolos especiales mediante el manejo de excepciones (ValueError)
+Valores negativos o cero: Invalida cualquier entrada menor o igual a cero ($C \le 0$ o $V \le 0$).
+Incongruencia de concentración ($C_1 \le C_2$): Rechaza intentos donde la concentración deseada sea mayor o igual que la solución madre (no es posible concentrar mediante dilución).
+Incongruencia de volumen ($V_2 < V_1$): Notifica si el volumen total solicitado es inferior al volumen alícuota requerido de la solución madre.
+
+---
+## Limitaciones conocidas
+Incompatibilidad de unidades heterogéneas: No realiza conversión automática de unidades (ej. Molar a mM, o mL a L). Los datos de concentración y volumen deben ingresarse en la misma escala dimensional.
+
+Sin soporte para diluciones seriadas: Diseñado únicamente para diluciones simples de un solo paso.
+
+Efectos físicos no contemplados: No calcula contracciones/expansiones de volumen al mezclar ciertos solventes, ni variaciones por temperatura o densidad en soluciones altamente concentradas.
+
