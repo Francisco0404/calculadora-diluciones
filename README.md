@@ -1,11 +1,11 @@
-# calculadora-diluciones
-Calculadora de diluciones de laboratorio (C1V1 = C2V2)
-# Calculadora de diluciones
 
-[Una frase: qué hace y para quién]
+Calculadora de diluciones de laboratorio (C1V1 = C2V2)
+
+
+Calcula las diluciones cuando conocemos la solcuión madre.
 
 ## El problema
-[La situación real de laboratorio que resuelve]
+[Calcula de manera automatica las concentraciones de una dilución ]
 
 ## Cómo funciona
 [C1·V1 = C2·V2, en dos o tres líneas]
