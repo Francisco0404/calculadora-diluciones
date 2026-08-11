@@ -1,11 +1,30 @@
-Calculadora de Diluciones de Laboratorio 
-##Herramienta en línea de comandos##
-para calcular de forma rápida y precisa los parámetros faltantes en diluciones químicas y biológicas a partir de una solución madre.El problemaEn los laboratorios, calcular manualmente las concentraciones o los volúmenes necesarios para preparar soluciones puede llevar a errores humanos de transcripción o de cálculo.
-Esta herramienta automatiza la resolución de la fórmula de dilución, permitiendo obtener de forma instantánea cualquier variable desconocida a partir de los tres datos conocidos.Cómo funcionaLa aplicación utiliza la ecuación de conservación de masa para soluciones idealizadas.
-Uso
-Ejecución Asegúrate de tener instalado el entorno correspondiente y ejecuta el programa desde la terminal:Bashpython calculadora_diluciones.py
+# Calculadora de Diluciones de Laboratorio ($C_1V_1 = C_2V_2$)
 
-Instrucciones de preparación:
-Mida 25.00 mL de la solución madre (2 M) y afile con disolvente hasta alcanzar un volumen total de 500.00 mL.
-Validaciones
-El programa incluye comprobaciones estrictas para garantizar la validez científica y matemática de la operación:Rechazo de valores negativos o cero: Ninguna concentración o volumen puede ser menor o igual a $0$.Comprobación física de la concentración ($C_1 > C_2$): Rechaza cálculos donde la concentración final requerida sea mayor que la concentración de la solución madre (no se puede concentrar mediante una dilución simple).Comprobación física del volumen ($V_2 \ge V_1$): Rechaza casos donde el volumen final sea menor que el volumen gastado de solución madre.Manejo de entradas no numéricas: Captura errores de sintaxis o caracteres alfanuméricos no válidos en los campos numéricos.Limitaciones conocidasSin conversión automática de unidades: Todos los valores ingresados para una misma dimensión deben estar en las mismas unidades (por ejemplo, si $V_2$ está en $\text{mL}$, $V_1$ se obtendrá en $\text{mL}$; si $C_1$ es molaridad, $C_2$ debe ser molaridad).Mezclas complejas y diluciones seriadas: No soporta mezclas de múltiples soluciones madres ni secuencias automáticas de diluciones en cadena/serie en un solo paso.Efectos no ideales: No contempla contracciones/expansiones de volumen al mezclar ciertos solventes ni cambios en la densidad de la solución a concentraciones muy elevadas.
+Herramienta en línea de comandos/script para calcular de forma rápida y precisa los parámetros faltantes en diluciones químicas y biológicas a partir de una solución madre.
+
+---
+
+## El problema
+
+En los laboratorios, calcular manualmente las concentraciones o los volúmenes necesarios para preparar soluciones puede llevar a errores humanos de transcripción o de cálculo. Esta herramienta automatiza la resolución de la fórmula de dilución, permitiendo obtener de forma instantánea cualquier variable desconocida ($C_1$, $V_1$, $C_2$ o $V_2$) a partir de los tres datos conocidos.
+
+---
+
+## Cómo funciona
+
+La aplicación utiliza la ecuación de conservación de masa para soluciones idealizadas:
+
+$$C_1 \cdot V_1 = C_2 \cdot V_2$$
+
+Donde $C_1$ y $V_1$ son la concentración y el volumen de la solución madre, y $C_2$ y $V_2$ representan la concentración y el volumen de la solución diluida deseada. El programa despeja automáticamente la variable incógnita introducida por el usuario, asegurando la consistencia dimensional entre las unidades.
+
+---
+
+## Uso
+
+### Ejecución
+
+Asegúrate de tener instalado el entorno correspondiente y ejecuta el programa desde la terminal:
+
+```bash
+python calculadora_diluciones.py
